@@ -24,6 +24,10 @@ jobs:
           cibw_archs_linux: "auto64"
         - os: windows-latest
           cibw_build: "cp37-*"
+        - os: windows-11-arm
+          # Windows ARM64 CPython starts at 3.9; the wheel is tagged py3 anyway.
+          cibw_build: "cp311-win_arm64"
+          name: '(ARM64)'
         - os: macos-latest
           cibw_build: "cp38-macosx_universal2"
           cibw_archs_macos: "universal2"
